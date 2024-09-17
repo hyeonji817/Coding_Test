@@ -8,8 +8,9 @@ public class cd_20300 {
 		Scanner sc = new Scanner(System.in);
 		
 		int n = sc.nextInt();   // 운동 기구의 개수 
-		long[] loss = new long[n];  // 각 운동 기구의 근육 손실 값 
+		long[] loss = new long[n];		// 각 운동 기구의 근육 손실 값 
 		
+		// 근육 손실량 만들기 
 		for (int i = 0; i < n; i++) {
 			loss[i] = sc.nextLong();
 		}
@@ -27,11 +28,12 @@ public class cd_20300 {
 		
 		// 양 끝에서부터 운동 기구를 묶어 최대 근육 손실 최소화 
 		for (int i = 0; i < n / 2; i++) {
-			long pairLoss = loss[i] + loss[n - 1 - i]; 
-			maxLoss = Math.max(maxLoss, pairLoss);
+			long pariLoss = loss[i] + loss[n - 1 - i]; 
+			maxLoss = Math.max(maxLoss, pariLoss);
 		}
 		
 		// 결과 출력 
 		System.out.println(maxLoss);
+		sc.close();
 	}
 }
